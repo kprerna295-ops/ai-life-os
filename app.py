@@ -1,12 +1,13 @@
-from flask import Flask, render_template, request, redirect, session, jsonify
-import sqlite3, os
+from flask import Flask, render_template, request, jsonify, redirect, session
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
+import splite3
 
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "mysecret123"
+app.secret_key = os.getenv("SECRET_KEY")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 

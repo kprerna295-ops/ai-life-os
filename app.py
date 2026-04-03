@@ -2,7 +2,12 @@ from flask import Flask, render_template, request, jsonify, redirect, session
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-import splite3
+
+import sys
+import pysqlite3
+sys.modules["sqlite3"] = pysqlite3
+
+import sqlite3
 
 load_dotenv()
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Life OS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JS -->
+    <script src="/static/js/script.js"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>AI Life OS</h2>
+
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/assistant">AI Assistant</a>
+    <a href="/resume">Resume</a>
+    <a href="/planner">Planner</a>
+    <a href="/files">Files</a>
+    <a href="/settings">Settings</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

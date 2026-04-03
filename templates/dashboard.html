@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<!-- CARDS -->
+<div class="grid">
+
+    <div class="card">
+        <h3>Total Tasks</h3>
+        <p id="taskCount">{{ count }}</p>
+    </div>
+
+    <div class="card">
+        <h3>AI Assistant</h3>
+        <p>Active</p>
+    </div>
+
+    <div class="card">
+        <h3>System Status</h3>
+        <p style="color: lightgreen;">Running</p>
+    </div>
+
+</div>
+
+<br>
+
+<h2>Analytics</h2>
+
+<div class="card">
+    <canvas id="chart"></canvas>
+</div>
+
+<!-- SAFE SCRIPT (NO JINJA INSIDE JS) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const taskCount = parseInt(document.getElementById("taskCount").innerText) || 0;
+
+    const ctx = document.getElementById("chart");
+
+    if (ctx) {
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["Tasks", "AI Usage", "Productivity"],
+                datasets: [{
+                    label: "System Stats",
+                    data: [taskCount, 5, 8],
+                    backgroundColor: ["#38bdf8", "#22c55e", "#facc15"]
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { ticks: { color: "white" } },
+                    y: { ticks: { color: "white" }, beginAtZero: true }
+                }
+            }
+        });
+    }
+
+});
+</script>
+
+{% endblock %}

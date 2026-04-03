@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: rgba(2,6,23,0.95);
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: #38bdf8;
+}
+
+.sidebar a {
+    display: block;
+    margin: 12px 0;
+    color: #cbd5f5;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #38bdf8;
+}
+
+/* Main */
+.main {
+    margin-left: 250px;
+    padding: 30px;
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* Chat bubbles */
+.chat-box p {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.chat-box p:nth-child(odd) {
+    background: #1e293b;
+}
+
+.chat-box p:nth-child(even) {
+    background: #0ea5e9;
+}
+
+/* Input */
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* Button */
+button {
+    padding: 10px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

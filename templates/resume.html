@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Resume Analyzer</h1>
+
+<form action="/upload_resume" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button>Upload</button>
+</form>
+
+{% if file %}
+<div class="card">
+    <h3>{{ file }}</h3>
+</div>
+{% endif %}
+
+{% if analysis %}
+<div class="card">
+    <h3>AI Feedback</h3>
+    <p>{{ analysis }}</p>
+</div>
+{% endif %}
+
+{% endblock %}
